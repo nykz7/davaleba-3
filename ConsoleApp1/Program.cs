@@ -94,42 +94,152 @@
 //}
 
 
-Console.WriteLine("Enter your email:");
-string email = Console.ReadLine();
+//Console.WriteLine("Enter your email:");
+//string email = Console.ReadLine();
 
-if (string.IsNullOrWhiteSpace(email) || !email.Contains("@") || !email.Contains(".") || email.StartsWith("@") || email.EndsWith("@"))
+//if (string.IsNullOrWhiteSpace(email) || !email.Contains("@") || !email.Contains(".") || email.StartsWith("@") || email.EndsWith("@"))
+//{
+//    Console.WriteLine("Wrong input");
+//    return;
+//} else
+//{
+//    Console.WriteLine("valid email");
+//}
+
+//Console.WriteLine("Enter your password:");
+//string password = Console.ReadLine();
+
+//if (!password.Any(char.IsUpper))
+//{
+//    Console.WriteLine("Password must contain at least one upper letter");
+//    return;
+//}
+//else if (!password.Any(ch => "!@#$%^&*()_+{}[]:;\"'<>,.?/\\|".Contains(ch)))
+//{
+//    Console.WriteLine("password must contain at least one symbol");
+//    return;
+//}
+//else if (!password.Any(char.IsDigit))
+//{
+//    Console.WriteLine("Passwored must contain at least one number");
+//}
+//else if (password.Length < 8)
+//{
+//    Console.WriteLine("password must be at least 8 character");
+//}
+//else
+//{
+//    Console.WriteLine("Password is valid!");
+//}
+
+#endregion
+
+
+////ციკლი
+//for (int i = 10; i >= 1; i--)
+//{
+//    Console.WriteLine(i);
+//}
+////~
+///
+
+
+#region ლექცია 5
+
+//Exception - გამონაკლისი
+
+
+//EXCEPTION დამუშავება try catchით
+//try
+//{
+//    //კოდს სადაც პოტენციურად ელოდები exception - ს
+//    int firstNumber = 10;
+//    int secondNumber = 0;
+
+//    int result = firstNumber / secondNumber;
+//}
+//catch (DivideByZeroException divideBy)
+//{
+//    // წერ ლოგიკას რა მოხდეს იმ შემთხვევაში თუ exception მოხდა
+//    Console.WriteLine(divideBy.Message);
+//}
+
+
+//int number = int.Parse(Console.ReadLine());
+
+//if (number >= 1 && number <= 7 )
+//{
+//    Console.WriteLine("right num");
+//}
+//else
+//{
+//    throw new ArgumentOutOfRangeException();
+//}
+
+#endregion
+
+
+#region დავალება კალკულატორი
+while (true)
 {
-    Console.WriteLine("Wrong input");
-    return;
-} else
-{
-    Console.WriteLine("valid email");
+    //შეამოაყვანინეთ ერთი რიცხვი კონსოლიდან
+    Console.Write("Enter first number: ");
+    if (!int.TryParse(Console.ReadLine(), result: out int firstNumber))
+    {
+        Console.WriteLine("Invalid number. Try again.");
+        continue;
+    }
+    //შეამოაყვანინეთ მეორე რიცხვი კონსოლიდან
+    Console.Write("Enter second number:");
+    if (!int.TryParse(Console.ReadLine(), result: out int secondNumber))
+    {
+        Console.WriteLine("Invalid number. Try again.");
+        continue;
+    }
+
+    //შეამოაყვანინეთ ოპერაცია კონსოლიდან
+    Console.Write("[+ - * /]");
+    if (!char.TryParse(Console.ReadLine(), result: out char operation))
+    {
+        Console.WriteLine("Invalid number. Try again.");
+        continue;
+    }
+
+
+    Console.Write("Wanna get answer? Y/N");
+    char yesOrNo = char.Parse(Console.ReadLine());
+
+
+
+    if (yesOrNo == 'N')
+    {
+        Console.WriteLine("Calculator Stopped! you typed - N");
+        break;
+    }
+
+    switch (operation)
+    {
+        case '+':
+            Console.WriteLine($"{firstNumber} + {secondNumber} = {firstNumber + secondNumber}");
+            break;
+        case '-':
+            Console.WriteLine($"{firstNumber} - {secondNumber} = {firstNumber - secondNumber}");
+            break;
+        case '*':
+            Console.WriteLine($"{firstNumber} * {secondNumber} = {firstNumber * secondNumber}");
+            break;
+        case '/':
+            Console.WriteLine($"{firstNumber} / {secondNumber} = {firstNumber / secondNumber}");
+            break;
+        default:
+            break;
+    }
 }
 
-Console.WriteLine("Enter your password:");
-string password = Console.ReadLine();
 
-if (!password.Any(char.IsUpper))
-{
-    Console.WriteLine("Password must contain at least one upper letter");
-    return;
-}
-else if (!password.Any(ch => "!@#$%^&*()_+{}[]:;\"'<>,.?/\\|".Contains(ch)))
-{
-    Console.WriteLine("password must contain at least one symbol");
-    return;
-}
-else if (!password.Any(char.IsDigit))
-{
-    Console.WriteLine("Passwored must contain at least one number");
-}
-else if (password.Length < 8)
-{
-    Console.WriteLine("password must be at least 8 character");
-}
-else
-{
-    Console.WriteLine("Password is valid!");
-}
+
+
+
+
 
 #endregion
