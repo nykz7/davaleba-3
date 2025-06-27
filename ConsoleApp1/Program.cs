@@ -180,66 +180,129 @@
 
 
 #region დავალება კალკულატორი
-while (true)
-{
-    //შეამოაყვანინეთ ერთი რიცხვი კონსოლიდან
-    Console.Write("Enter first number: ");
-    if (!int.TryParse(Console.ReadLine(), result: out int firstNumber))
-    {
-        Console.WriteLine("Invalid number. Try again.");
-        continue;
-    }
-    //შეამოაყვანინეთ მეორე რიცხვი კონსოლიდან
-    Console.Write("Enter second number:");
-    if (!int.TryParse(Console.ReadLine(), result: out int secondNumber))
-    {
-        Console.WriteLine("Invalid number. Try again.");
-        continue;
-    }
+//while (true)
+//{
+//    //შეამოაყვანინეთ ერთი რიცხვი კონსოლიდან
+//    Console.Write("Enter first number: ");
+//    if (!int.TryParse(Console.ReadLine(), result: out int firstNumber))
+//    {
+//        Console.WriteLine("Invalid number. Try again.");
+//        continue;
+//    }
+//    //შეამოაყვანინეთ მეორე რიცხვი კონსოლიდან
+//    Console.Write("Enter second number:");
+//    if (!int.TryParse(Console.ReadLine(), result: out int secondNumber))
+//    {
+//        Console.WriteLine("Invalid number. Try again.");
+//        continue;
+//    }
 
-    //შეამოაყვანინეთ ოპერაცია კონსოლიდან
-    Console.Write("[+ - * /]");
-    if (!char.TryParse(Console.ReadLine(), result: out char operation))
-    {
-        Console.WriteLine("Invalid number. Try again.");
-        continue;
-    }
-
-
-    Console.Write("Wanna get answer? Y/N");
-    char yesOrNo = char.Parse(Console.ReadLine());
+//    //შეამოაყვანინეთ ოპერაცია კონსოლიდან
+//    Console.Write("[+ - * /]");
+//    if (!char.TryParse(Console.ReadLine(), result: out char operation))
+//    {
+//        Console.WriteLine("Invalid number. Try again.");
+//        continue;
+//    }
 
 
-
-    if (yesOrNo == 'N')
-    {
-        Console.WriteLine("Calculator Stopped! you typed - N");
-        break;
-    }
-
-    switch (operation)
-    {
-        case '+':
-            Console.WriteLine($"{firstNumber} + {secondNumber} = {firstNumber + secondNumber}");
-            break;
-        case '-':
-            Console.WriteLine($"{firstNumber} - {secondNumber} = {firstNumber - secondNumber}");
-            break;
-        case '*':
-            Console.WriteLine($"{firstNumber} * {secondNumber} = {firstNumber * secondNumber}");
-            break;
-        case '/':
-            Console.WriteLine($"{firstNumber} / {secondNumber} = {firstNumber / secondNumber}");
-            break;
-        default:
-            break;
-    }
-}
+//    Console.Write("Wanna get answer? Y/N");
+//    char yesOrNo = char.Parse(Console.ReadLine());
 
 
+
+//    if (yesOrNo == 'N')
+//    {
+//        Console.WriteLine("Calculator Stopped! you typed - N");
+//        break;
+//    }
+
+//    switch (operation)
+//    {
+//        case '+':
+//            Console.WriteLine($"{firstNumber} + {secondNumber} = {firstNumber + secondNumber}");
+//            break;
+//        case '-':
+//            Console.WriteLine($"{firstNumber} - {secondNumber} = {firstNumber - secondNumber}");
+//            break;
+//        case '*':
+//            Console.WriteLine($"{firstNumber} * {secondNumber} = {firstNumber * secondNumber}");
+//            break;
+//        case '/':
+//            Console.WriteLine($"{firstNumber} / {secondNumber} = {firstNumber / secondNumber}");
+//            break;
+//        default:
+//            break;
+//    }
+//}
 
 
 
 
+
+
+
+#endregion
+
+#region დავალება Array
+
+Random random = new Random();
+
+int[] randomArray = { 1, 1, 1, 3, 4, 5 };
+//for (int i = 0; i < randomArray.Length; i++)
+//{
+//    randomArray[i] = random.Next(1, 101);
+//}
+
+
+//1.დაწერეთ კოდი რომელიც შეაჯამებს მასივის ყველა ელემენტს
+//int summary = 0;
+//for (int i = 0; i < randomArray.Length; i++)
+//{
+//    //summary = summary + randomArray[i]; // გრძელი ჩანაწერი
+//    summary += randomArray[i]; // მოკლე ჩანაწერი
+//}
+
+
+
+//2.დაწერეთ კოდი რომელიც მოძებმის მასივის ზომას length - ის გამოყენების გარეშე
+
+//int length = 0;
+
+//try
+//{
+//    while (true)
+//    {
+//        int temp = randomArray[length];
+//        length++;
+//    }
+//}
+//catch (IndexOutOfRangeException)
+//{
+//    Console.WriteLine(length);
+//}
+
+//foreach (var item in randomArray)
+//{
+//    length++;
+//}
+
+
+//3. დაწერეთ კოდი რომელიც დაბეჭდავს მასივს უკუღმა
+
+//for (int i = randomArray.Length - 1; i >= 0; i--)
+//{
+//    Console.WriteLine(randomArray[i]);
+//}
+
+
+//4. დაწერეთ კოდი რომელიც მასივის ყველა ელემენტს გადააკოპირებს მერე მასივში
+
+//int[] randomArray2 = new int[randomArray.Length];
+
+//for (int i = 0; i < randomArray.Length; i++)
+//{
+//    randomArray2[i] = randomArray[i];
+//}
 
 #endregion
